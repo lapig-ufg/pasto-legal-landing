@@ -1,0 +1,44 @@
+<section class="py-16 sm:py-32 px-5 sm:px-8 lg:px-12 relative" id="funcionalidades">
+  <!-- Section Header -->
+  <div appRevealOnScroll class="max-w-[1200px] mx-auto mb-16 text-center">
+    <div class="inline-flex items-center gap-1.5 font-mono text-[0.7rem] text-verde-bio uppercase tracking-[2px] mb-4">
+      <span class="w-5 h-px bg-verde-bio"></span>
+      {{ i18n.t().features.tag }}
+    </div>
+    <h2 class="text-[clamp(2rem,4vw,3.5rem)] font-extrabold tracking-[-1.5px] leading-[1.1]">
+      {{ i18n.t().features.title }}<br>
+      <span class="text-verde-bio">{{ i18n.t().features.titleHighlight }}</span>
+    </h2>
+  </div>
+
+  <!-- Features Container -->
+  <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+    <!-- Features List -->
+    <div class="pt-8 order-2 lg:order-1">
+      @for (feat of features(); track feat.screen) {
+        <div
+          class="feature-item p-5 sm:p-8 border-l-2 mb-3 sm:mb-4 cursor-pointer transition-all duration-400 rounded-r-xl"
+          [class.active]="activeScreen() === feat.screen"
+          [class.border-l-glass-border]="activeScreen() !== feat.screen"
+          [class.border-l-verde-bio]="activeScreen() === feat.screen"
+          [class.bg-glass-bg]="activeScreen() === feat.screen"
+          (click)="setActive(feat.screen)">
+          <div class="font-mono text-[0.65rem] text-verde-bio tracking-[2px] mb-2">{{ feat.number }}</div>
+          <h3 class="text-[1.3rem] font-bold mb-2 transition-colors duration-300" [class.text-verde-bio]="activeScreen() === feat.screen">{{ feat.title }}</h3>
+          <p class="text-[0.85rem] text-text-dim leading-relaxed font-light">{{ feat.description }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- Phone Display -->
+    <div class="lg:sticky lg:top-[120px] flex justify-center order-1 lg:order-2">
+      <div class="feature-phone-wrapper">
+        @for (screenType of ['location', 'scanner', 'voice']; track screenType) {
+          <div class="screen-layer" [class.active]="activeScreen() === screenType">
+            <app-phone-mockup [screen]="$any(screenType)" size="small" />
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>

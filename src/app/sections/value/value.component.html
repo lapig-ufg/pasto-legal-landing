@@ -1,0 +1,45 @@
+<section class="py-16 sm:py-32 px-5 sm:px-8 lg:px-12 relative overflow-hidden" id="valores">
+  <!-- Accent: topographic curves -->
+  <svg class="absolute left-0 top-0 w-1/3 h-full opacity-[0.05] pointer-events-none" viewBox="0 0 400 800" preserveAspectRatio="none" fill="none">
+    <path d="M50 100 C100 80, 200 150, 300 120 S400 160, 400 160" stroke="var(--color-verde-bio)" stroke-width="1" />
+    <path d="M30 250 C120 220, 220 300, 320 260 S400 290, 400 290" stroke="var(--color-verde-bio)" stroke-width="0.8" />
+    <path d="M60 400 C150 380, 250 440, 350 400 S400 430, 400 430" stroke="var(--color-verde-bio)" stroke-width="0.6" />
+    <path d="M20 550 C130 530, 230 590, 330 560 S400 580, 400 580" stroke="var(--color-verde-bio)" stroke-width="0.5" />
+    <path d="M40 700 C140 680, 240 730, 340 700 S400 720, 400 720" stroke="var(--color-verde-bio)" stroke-width="0.5" />
+  </svg>
+  <div class="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 sm:gap-20 items-center">
+    <!-- Text Side -->
+    <div appRevealOnScroll>
+      <div class="section-tag inline-flex items-center gap-1.5 font-mono text-[0.7rem] text-verde-bio uppercase tracking-[2px] mb-4">
+        <span class="w-5 h-px bg-verde-bio"></span>
+        {{ i18n.t().value.tag }}
+      </div>
+      <h2 class="text-[clamp(2rem,4vw,3.5rem)] font-extrabold tracking-[-1.5px] leading-[1.1] mb-5">
+        {{ i18n.t().value.title }}<br>
+        <span class="text-verde-bio">{{ i18n.t().value.titleHighlight }}</span>
+      </h2>
+      <p class="text-[1.05rem] text-text-muted font-light leading-relaxed max-w-[550px]">
+        {{ i18n.t().value.subtitle }}
+      </p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      @for (card of cards(); track card.title) {
+        <div appRevealOnScroll class="value-card group bg-glass-bg border border-glass-border backdrop-blur-[15px] rounded-2xl p-5 sm:p-8 cursor-pointer transition-all duration-400 relative overflow-hidden hover:border-[rgba(45,204,112,0.3)] hover:-translate-y-1 hover:bg-[rgba(45,204,112,0.05)]">
+          <!-- Top border glow -->
+          <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-verde-bio to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+          <div class="mb-4 transition-colors duration-300 text-text-secondary group-hover:text-verde-bio">
+            <app-icon [name]="card.icon" [size]="32" />
+          </div>
+          <div class="font-bold text-base mb-2 tracking-tight">{{ card.title }}</div>
+          <div class="text-[0.8rem] text-text-dim leading-relaxed font-light">{{ card.desc }}</div>
+          <div class="card-reveal max-h-0 overflow-hidden transition-all duration-400 text-[0.75rem] text-verde-bio leading-relaxed font-mono group-hover:max-h-[100px] group-hover:mt-3">
+            {{ card.reveal }}
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

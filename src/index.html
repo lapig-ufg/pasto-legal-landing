@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <script>
+    (function() {
+      var t = localStorage.getItem('pl-theme');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+  <meta charset="utf-8">
+  <title>Pasto Legal — Monitoramento Inteligente de Pastagens via WhatsApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plataforma de inteligência artificial da UFG/LAPIG que monitora a saúde do seu pasto via WhatsApp com dados de satélite Sentinel-2. Ciência aberta, gratuita e feita no Brasil.">
+  <meta name="keywords" content="monitoramento pastagens, inteligência artificial, WhatsApp, satélite, Sentinel-2, LAPIG, UFG, pecuária sustentável, NDVI, degradação pastagens, sensoriamento remoto, Google Earth Engine, agropecuária, Brasil">
+  <meta name="author" content="LAPIG — Laboratório de Processamento de Imagens e Geoprocessamento — UFG">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#1a252f" id="theme-color-meta">
+  <meta name="color-scheme" content="dark light">
+  <link rel="canonical" href="https://pastolegal.lapig.iesa.ufg.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pasto Legal">
+  <meta property="og:title" content="Pasto Legal — Monitoramento Inteligente de Pastagens via WhatsApp">
+  <meta property="og:description" content="IA + dados de satélite Sentinel-2 para monitorar a saúde do seu pasto direto pelo WhatsApp. Gratuito, científico e feito no Brasil pelo LAPIG/UFG.">
+  <meta property="og:url" content="https://pastolegal.lapig.iesa.ufg.br/">
+  <meta property="og:image" content="https://pastolegal.lapig.iesa.ufg.br/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Pasto Legal — Monitoramento inteligente de pastagens com IA e satélite">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pasto Legal — Monitoramento Inteligente de Pastagens">
+  <meta name="twitter:description" content="IA + satélite Sentinel-2 para monitorar pastagens via WhatsApp. Gratuito e feito no Brasil pelo LAPIG/UFG.">
+  <meta name="twitter:image" content="https://pastolegal.lapig.iesa.ufg.br/og-image.png">
+  <meta name="twitter:image:alt" content="Pasto Legal — Monitoramento inteligente de pastagens com IA e satélite">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+
+  <!-- Multilingual -->
+  <link rel="alternate" hreflang="pt-BR" href="https://pastolegal.lapig.iesa.ufg.br/">
+  <link rel="alternate" hreflang="en" href="https://pastolegal.lapig.iesa.ufg.br/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://pastolegal.lapig.iesa.ufg.br/">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Pasto Legal",
+        "alternateName": "PastoLegal",
+        "description": "Plataforma de inteligência artificial que monitora a saúde de pastagens via WhatsApp com dados de satélite Sentinel-2.",
+        "url": "https://pastolegal.lapig.iesa.ufg.br/",
+        "applicationCategory": "EnvironmentalMonitoring",
+        "operatingSystem": "Web, WhatsApp",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "creator": {
+          "@type": "ResearchOrganization",
+          "name": "LAPIG — Laboratório de Processamento de Imagens e Geoprocessamento",
+          "url": "https://www.lapig.iesa.ufg.br/",
+          "parentOrganization": {
+            "@type": "EducationalOrganization",
+            "name": "Universidade Federal de Goiás",
+            "alternateName": "UFG",
+            "url": "https://www.ufg.br/"
+          }
+        },
+        "featureList": [
+          "Monitoramento de pastagens via WhatsApp",
+          "Análise com imagens Sentinel-2",
+          "Índices de vegetação (NDVI, EVI)",
+          "Inteligência artificial com Google Gemini",
+          "Processamento via Google Earth Engine",
+          "Relatórios automáticos de saúde do pasto"
+        ],
+        "screenshot": "https://pastolegal.lapig.iesa.ufg.br/og-image.png",
+        "inLanguage": ["pt-BR", "en"]
+      },
+      {
+        "@type": "Organization",
+        "name": "LAPIG",
+        "legalName": "Laboratório de Processamento de Imagens e Geoprocessamento",
+        "url": "https://www.lapig.iesa.ufg.br/",
+        "logo": "https://pastolegal.lapig.iesa.ufg.br/logo.svg",
+        "email": "lapig.ufg@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Goiânia",
+          "addressRegion": "GO",
+          "addressCountry": "BR",
+          "postalCode": "74001-970"
+        },
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "Universidade Federal de Goiás"
+        },
+        "sameAs": [
+          "https://github.com/lapig-ufg"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://pastolegal.lapig.iesa.ufg.br/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    if (localStorage.getItem('pl-theme') === 'light') {
+      document.getElementById('theme-color-meta').content = '#E8ECF2';
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
