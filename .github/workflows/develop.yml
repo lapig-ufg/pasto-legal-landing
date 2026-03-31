@@ -3,7 +3,7 @@ name: Build and Deploy PastoLegal Landing Page on Development Environment
 on:
   push:
     branches:
-      - main
+      - develop
 
 jobs:
   build:
