@@ -18,8 +18,8 @@ export const ptBr = {
     titleLight: 'O Futuro é',
     titleGreen: 'Verde',
     titleEnd: 'e Conectado',
-    subtitle: 'Inteligência artificial via WhatsApp para monitorar a saúde do seu pasto com dados de satélite. Ciência aberta, gratuita e feita no Brasil.',
-    cta: 'Acessar o Pasto Legal',
+    subtitle: 'Inteligência artificial via WhatsApp para monitorar a saúde do seu pasto com dados de satélite e conhecimento de campo. Ciência aberta, gratuita e feita no Brasil.',
+    cta: 'Testar o Pasto Legal',
     ctaSecondary: 'Como funciona'
   },
 
@@ -36,11 +36,11 @@ export const ptBr = {
     tag: 'Ciência e Simplicidade',
     title: 'Tecnologia que',
     titleHighlight: 'fala a sua língua',
-    subtitle: 'Traduzimos dados complexos de satélite em informações práticas para o dia a dia da sua fazenda. Sem complicação, direto no WhatsApp.',
+    subtitle: 'Traduzimos dados complexos de satélite e conhecimento de pastagens em informações práticas para o dia a dia da sua fazenda. Sem complicação, direto no WhatsApp.',
     cards: [
       {
         title: 'Dados de Satélite',
-        desc: 'Imagens Sentinel-2 atualizadas a cada 5 dias para monitorar a saúde do pasto.',
+        desc: 'Múltiplas Bases de Dados Integramos dados do Mapbiomas, Global Pasture Watch e Global Methane Hub, entre outros para monitorar a saúde do pasto.',
         reveal: '→ NDVI, EVI e índices de biomassa processados automaticamente.'
       },
       {
@@ -70,7 +70,7 @@ export const ptBr = {
       {
         number: '01 — LOCALIZAÇÃO',
         title: 'Envie sua Localização',
-        description: 'Compartilhe a localização pelo WhatsApp e receba instantaneamente o relatório de biomassa da sua área, com dados do satélite Sentinel-2.'
+        description: 'Compartilhe a localização pelo WhatsApp e receba instantaneamente relatório de qualidade das pastagens, cálculo de biomassa e sugestões de melhoria, entre outros.'
       },
       {
         number: '02 — ANÁLISE DE FOTO',
@@ -80,23 +80,54 @@ export const ptBr = {
       {
         number: '03 — COMANDO DE VOZ',
         title: 'Fale com a IA',
-        description: 'Envie um áudio perguntando sobre o seu pasto. O Google Gemini processa a fala e responde com inteligência.'
+        description: 'Envie um áudio perguntando sobre o seu pasto. O Pasto Legal processa a fala e responde com inteligência.'
       }
-    ]
+    ],
+    phoneMockup: {
+      chat: {
+        msg1: 'Localização enviada: Fazenda São Jorge, GO',
+        msg2: 'Localização recebida! Analisando dados Sentinel-2 da sua área...',
+        msg3: 'Relatório de Biomassa — Últimos 30 dias:',
+        msg4: 'Biomassa em alta: +22% no último mês. Seu pasto está saudável!',
+        msg5: 'E a degradação na área norte?'
+      },
+      location: {
+        bubble: 'Fazenda São Jorge'
+      },
+      scanner: {
+        label: 'ANALISANDO COBERTURA...'
+      },
+      voice: {
+        label: 'PROCESSANDO ÁUDIO',
+        text: 'Biomassa: +22% ✓'
+      }
+    }
   },
 
   // ═══ Infrastructure Section ═══
   infra: {
     tag: 'Infraestrutura',
-    title: 'A mágica',
-    titleHighlight: 'por trás dos dados',
-    subtitle: 'Do satélite ao seu celular em segundos. Infraestrutura aberta, robusta e 100% brasileira.',
-    nodes: [
-      { name: 'Sentinel-2', sub: 'ESA / Copernicus' },
-      { name: 'Servidores UFG', sub: 'Processamento NDVI' },
-      { name: 'Google Gemini', sub: 'NLP + Visão' },
-      { name: 'WhatsApp', sub: 'Produtor Rural' }
-    ]
+    title: 'Arquitetura Geral',
+    titleHighlight: 'do serviço',
+    subtitle: 'Sistema multi-agentes de IA integrando dados geoespaciais, climáticos e práticas agropecuárias em tempo real.',
+    entryLabels: {
+      textLocation: 'Localização',
+      audio: 'Áudio',
+      textMap: 'Voz'
+    },
+    agents: [
+      { name: 'SICAR', desc: 'Cadastro Ambiental Rural — Consulta no SICAR via localização' },
+      { name: 'IBGE', desc: 'Inteligência territorial e climática — Uso e cobertura, precipitação, etc.' },
+      { name: 'LAPIG / Embrapa', desc: 'Suporte para recuperação de pasto degradado' },
+      { name: 'LAPIG / Embrapa', desc: 'Suporte para manejo de pasto' },
+      { name: 'Agno', desc: 'Alertas climáticos e de manejo de pasto em tempo real' }
+    ],
+    motors: [
+      { name: 'Gemini 2.5 Flash', desc: 'Motor de processamento IA' },
+      { name: 'Motor geográfico', desc: 'Motor de processamento geográfico' },
+      { name: 'Banco de dados', desc: 'Banco de dados de usuários' }
+    ],
+    agentsLabel: 'Sistema multi-agentes IA'
   },
 
   // ═══ Partners Section ═══
@@ -106,7 +137,7 @@ export const ptBr = {
 
   // ═══ Footer ═══
   footer: {
-    tagline: 'Inteligência artificial para pecuária sustentável. Um projeto de ciência aberta da Universidade Federal de Goiás.',
+    tagline: 'Inteligência artificial para pecuária sustentável. Um projeto de ciência aberta do LAPIG/UFG e da Solved, com apoio do Instituto Clima e Sociedade.',
     columns: {
       platform: {
         title: 'Plataforma',
@@ -380,28 +411,62 @@ export const ptBr = {
   // ═══ About Page ═══
   about: {
     title: 'Sobre o Pasto Legal',
-    subtitle: 'Uma plataforma de ciência aberta que conecta pesquisa acadêmica, inteligência artificial e sensoriamento remoto para transformar a pecuária brasileira.',
+    subtitle: 'Uma plataforma de ciência aberta que conecta pesquisa, inteligência artificial e sensoriamento remoto para transformar a pecuária brasileira.',
     mission: {
       tag: 'Missão',
-      title: 'Democratizar o acesso à informação geoespacial',
-      p1: 'O Pasto Legal nasceu da convicção de que dados de satélite não deveriam ficar restritos a laboratórios e grandes empresas. Desenvolvido pelo LAPIG/UFG, o projeto traduz imagens Sentinel-2 em informações acionáveis, entregues diretamente no WhatsApp do produtor rural — sem necessidade de instalar aplicativos, adquirir equipamentos ou possuir conhecimento técnico em sensoriamento remoto.',
+      title: 'Levar conhecimento técnico em linguagem acessível para o pecuarista',
+      p1: 'Há um enorme potencial para melhorar a eficiência da pecuária brasileira. O conhecimento existe, mas não chega na ponta ao produtor rural. O Pasto Legal nasce da vontade de sanar essa lacuna. Ele integra dados existentes para gerar informações acionáveis, entregues diretamente no WhatsApp do produtor rural — sem necessidade de instalar aplicativos, adquirir equipamentos ou possuir conhecimento técnico.',
       p2: 'Acreditamos que a pecuária sustentável começa com informação de qualidade. Quando o produtor entende a saúde do seu pasto, toma decisões melhores para o rebanho, para o solo e para o planeta.'
     },
     howItWorks: {
       tag: 'Como Funciona',
       title: 'Do satélite ao WhatsApp',
       steps: [
-        { number: '01', title: 'Captura', desc: 'Satélites Sentinel-2 imageiam o Brasil a cada 5 dias com resolução de 10 metros.' },
-        { number: '02', title: 'Processamento', desc: 'Índices espectrais (NDVI, EVI) são calculados e séries temporais são construídas.' },
-        { number: '03', title: 'Inteligência', desc: 'Modelos de machine learning classificam vigor, degradação e sazonalidade das pastagens.' },
-        { number: '04', title: 'Entrega', desc: 'O Google Gemini interpreta os resultados e responde ao produtor via WhatsApp em linguagem natural.' }
+        { number: '01', title: 'Envio da localização', desc: 'O usuário envia a localização ou CAR da propriedade.' },
+        { number: '02', title: 'Recuperação dos limites', desc: 'O Pasto Legal busca e recupera os limites da propriedade na base do Cadastro Ambiental Rural.' },
+        { number: '03', title: 'Análise de Pastagem', desc: 'Com base nos dados do Mapa de Pastagens do Mapbiomas e nos dados do Global Pasture Watch, é gerada uma análise inicial de vigor.' },
+        { number: '04', title: 'Inteligência', desc: 'A partir de perguntas e interação com o usuário, novas análises são geradas.' },
+        { number: '05', title: 'Entrega', desc: 'Em áudio ou texto, sempre em linguagem acessível, o Pasto Legal propõe formas de melhorar a qualidade de pastagem.' }
       ]
     },
     team: {
       tag: 'Equipe',
       title: 'Quem faz o Pasto Legal',
-      p1: 'O projeto é desenvolvido e mantido pelo Laboratório de Processamento de Imagens e Geoprocessamento (LAPIG), vinculado ao Instituto de Estudos Socioambientais (IESA) da Universidade Federal de Goiás (UFG).',
-      p2: 'Nossa equipe multidisciplinar reúne pesquisadores, engenheiros e estudantes das áreas de sensoriamento remoto, ciência da computação, inteligência artificial e ciências ambientais.'
+      p1: 'O projeto é desenvolvido e mantido pelo Laboratório de Sensoriamento Remoto e Geoprocessamento (LAPIG), vinculado ao Instituto de Estudos Socioambientais (IESA) da Universidade Federal de Goiás (UFG) e pela Solved - Soluções em Geoinformação.',
+      p2: 'Nossa equipe multidisciplinar reúne pesquisadores, engenheiros e estudantes das áreas de sensoriamento remoto, ciências ambientais, ciência da computação, agronomia, zootecnia, inteligência artificial e ciências ambientais.',
+      groups: [
+        {
+          title: 'Coordenação Geral',
+          members: ['Laerte Guimarães Ferreira Júnior']
+        },
+        {
+          title: 'Coordenação Técnica',
+          members: ['Leandro Parente']
+        },
+        {
+          title: 'Desenvolvimento Tecnológico',
+          members: [
+            'Tiago Gonçalves Maia',
+            'Bernard Silva',
+            'Luiz Cortinhas Ferreira Neto'
+          ]
+        },
+        {
+          title: 'Equipe Técnica',
+          members: [
+            'Alessandro Azevedo',
+            'Igor Souza Perin',
+            'Ana Paula Mattos e Silva',
+            'Geovani Mallmann',
+            'Mário Barroso',
+            'Pedro da Costa Novaes',
+            'Victor Alves',
+            'Wilton Ladeira',
+            'Mariana Gomes',
+            'Nathalia Telles'
+          ]
+        }
+      ]
     },
     partners: {
       tag: 'Parceiros',
@@ -415,7 +480,7 @@ export const ptBr = {
     },
     tech: {
       tag: 'Tecnologia',
-      title: 'Stack aberta e reproduzível',
+      title: 'Ciência aberta e reproduzível',
       desc: 'Todo o código do Pasto Legal é distribuído sob licença MIT. Transparência e reprodutibilidade são pilares do projeto.'
     },
     contact: {

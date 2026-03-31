@@ -19,7 +19,7 @@ export const en: Translations = {
     titleGreen: 'Green',
     titleEnd: 'and Connected',
     subtitle: 'AI-powered WhatsApp assistant to monitor your pasture health with satellite data. Open science, free, and made in Brazil.',
-    cta: 'Access Pasto Legal',
+    cta: 'Try Pasto Legal',
     ctaSecondary: 'How it works'
   },
 
@@ -38,7 +38,7 @@ export const en: Translations = {
     cards: [
       {
         title: 'Satellite Data',
-        desc: 'Sentinel-2 images updated every 5 days to monitor pasture health.',
+        desc: 'Multiple Data Sources — We integrate data from Mapbiomas, Global Pasture Watch, and the Global Methane Hub, among others, to monitor pasture health.',
         reveal: '→ NDVI, EVI, and biomass indices processed automatically.'
       },
       {
@@ -79,20 +79,51 @@ export const en: Translations = {
         title: 'Talk to the AI',
         description: 'Send a voice message asking about your pasture. Google Gemini processes speech and responds with intelligence.'
       }
-    ]
+    ],
+    phoneMockup: {
+      chat: {
+        msg1: 'Location sent: Fazenda São Jorge, GO',
+        msg2: 'Location received! Analyzing Sentinel-2 data for your area...',
+        msg3: 'Biomass Report — Last 30 days:',
+        msg4: 'Biomass rising: +22% last month. Your pasture is healthy!',
+        msg5: 'What about degradation in the north area?'
+      },
+      location: {
+        bubble: 'Fazenda São Jorge'
+      },
+      scanner: {
+        label: 'ANALYZING COVERAGE...'
+      },
+      voice: {
+        label: 'PROCESSING AUDIO',
+        text: 'Biomass: +22% ✓'
+      }
+    }
   },
 
   infra: {
-    tag: 'Infrastructure',
-    title: 'The magic',
-    titleHighlight: 'behind the data',
-    subtitle: 'From satellite to your phone in seconds. Open, robust, and 100% Brazilian infrastructure.',
-    nodes: [
-      { name: 'Sentinel-2', sub: 'ESA / Copernicus' },
-      { name: 'UFG Servers', sub: 'NDVI Processing' },
-      { name: 'Google Gemini', sub: 'NLP + Vision' },
-      { name: 'WhatsApp', sub: 'Farmer' }
-    ]
+    tag: 'Architecture',
+    title: 'General Service',
+    titleHighlight: 'Architecture',
+    subtitle: 'Multi-agent AI system integrating geospatial, climate, and agropastoral data in real time.',
+    entryLabels: {
+      textLocation: 'Location',
+      audio: 'Audio',
+      textMap: 'Voice'
+    },
+    agents: [
+      { name: 'SICAR', desc: 'Rural Environmental Registry — Query via location' },
+      { name: 'IBGE', desc: 'Territorial & climate intelligence — Land use, coverage, precipitation, etc.' },
+      { name: 'LAPIG / Embrapa', desc: 'Degraded pasture recovery support' },
+      { name: 'LAPIG / Embrapa', desc: 'Pasture management support' },
+      { name: 'Agno', desc: 'Climate and pasture management alerts in real time' }
+    ],
+    motors: [
+      { name: 'Gemini 2.5 Flash', desc: 'AI processing engine' },
+      { name: 'Geo engine', desc: 'Geographic processing engine' },
+      { name: 'Database', desc: 'User database' }
+    ],
+    agentsLabel: 'Multi-agent AI System'
   },
 
   partners: {
@@ -372,24 +403,58 @@ export const en: Translations = {
     mission: {
       tag: 'Mission',
       title: 'Democratizing access to geospatial information',
-      p1: 'Pasto Legal was born from the conviction that satellite data should not be restricted to laboratories and large corporations. Developed by LAPIG/UFG, the project translates Sentinel-2 images into actionable information, delivered directly to the farmer\'s WhatsApp — no need to install apps, acquire equipment, or have technical knowledge in remote sensing.',
-      p2: 'We believe sustainable livestock farming starts with quality information. When the farmer understands the health of their pasture, they make better decisions for the herd, the soil, and the planet.'
+      p1: 'There is significant untapped potential to improve the efficiency of Brazilian livestock production. The knowledge already exists, but it often fails to reach farmers at the operational level. Pasto Legal was created to bridge this gap by integrating existing data sources and transforming them into actionable insights. These insights are delivered directly to farmers via WhatsApp—eliminating the need for app installations, additional hardware, or specialized technical knowledge.',
+      p2: 'We believe that sustainable livestock production begins with access to high-quality information. When farmers understand the condition and health of their pastures, they are empowered to make better decisions for their herds, the soil, and the environment.'
     },
     howItWorks: {
       tag: 'How It Works',
       title: 'From satellite to WhatsApp',
       steps: [
-        { number: '01', title: 'Capture', desc: 'Sentinel-2 satellites image Brazil every 5 days at 10-meter resolution.' },
-        { number: '02', title: 'Processing', desc: 'Spectral indices (NDVI, EVI) are calculated and time series are built.' },
-        { number: '03', title: 'Intelligence', desc: 'Machine learning models classify vigor, degradation, and pasture seasonality.' },
-        { number: '04', title: 'Delivery', desc: 'Google Gemini interprets results and responds to farmers via WhatsApp in natural language.' }
+        { number: '01', title: 'Send Location', desc: 'The user sends the property location or CAR registration number.' },
+        { number: '02', title: 'Boundary Retrieval', desc: 'Pasto Legal fetches and retrieves the property boundaries from the Rural Environmental Registry (CAR) database.' },
+        { number: '03', title: 'Pasture Analysis', desc: 'Based on Mapbiomas Pasture Map and Global Pasture Watch data, an initial vigor analysis is generated.' },
+        { number: '04', title: 'Intelligence', desc: 'Through questions and interaction with the user, new analyses are generated.' },
+        { number: '05', title: 'Delivery', desc: 'In audio or text, always in accessible language, Pasto Legal proposes ways to improve pasture quality.' }
       ]
     },
     team: {
       tag: 'Team',
       title: 'Who builds Pasto Legal',
-      p1: 'The project is developed and maintained by the Image Processing and GIS Laboratory (LAPIG), affiliated with the Institute of Socio-Environmental Studies (IESA) at the Federal University of Goiás (UFG).',
-      p2: 'Our multidisciplinary team brings together researchers, engineers, and students from remote sensing, computer science, artificial intelligence, and environmental sciences.'
+      p1: 'The project is developed and maintained by the Image Processing and GIS Laboratory (LAPIG), affiliated with the Institute of Socio-Environmental Studies (IESA) at the Federal University of Goiás (UFG) and by Solved - Geoinformation Solutions.',
+      p2: 'Our multidisciplinary team brings together researchers, engineers, and students from remote sensing, environmental sciences, computer science, agronomy, animal science, artificial intelligence, and environmental sciences.',
+      groups: [
+        {
+          title: 'General Coordination',
+          members: ['Laerte Guimarães Ferreira Júnior']
+        },
+        {
+          title: 'Technical Coordination',
+          members: ['Leandro Parente']
+        },
+        {
+          title: 'Technological Development',
+          members: [
+            'Tiago Gonçalves Maia',
+            'Bernard Silva',
+            'Luiz Cortinhas Ferreira Neto'
+          ]
+        },
+        {
+          title: 'Technical Team',
+          members: [
+            'Alessandro Azevedo',
+            'Igor Souza Perin',
+            'Ana Paula Mattos e Silva',
+            'Geovani Mallmann',
+            'Mário Barroso',
+            'Pedro da Costa Novaes',
+            'Victor Alves',
+            'Wilton Ladeira',
+            'Mariana Gomes',
+            'Nathalia Telles'
+          ]
+        }
+      ]
     },
     partners: {
       tag: 'Partners',
@@ -403,7 +468,7 @@ export const en: Translations = {
     },
     tech: {
       tag: 'Technology',
-      title: 'Open and reproducible stack',
+      title: 'Open and reproducible science',
       desc: 'All Pasto Legal code is distributed under the MIT license. Transparency and reproducibility are project pillars.'
     },
     contact: {

@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HeroComponent } from '../../sections/hero/hero.component';
-import { StatsBarComponent } from '../../sections/stats-bar/stats-bar.component';
+// import { StatsBarComponent } from '../../sections/stats-bar/stats-bar.component';
 import { ValueComponent } from '../../sections/value/value.component';
 import { FeaturesComponent } from '../../sections/features/features.component';
 import { InfrastructureComponent } from '../../sections/infrastructure/infrastructure.component';
@@ -12,11 +12,11 @@ import { FooterComponent } from '../../sections/footer/footer.component';
   standalone: true,
   imports: [
     HeroComponent,
-    StatsBarComponent,
+    // StatsBarComponent,
     ValueComponent,
     FeaturesComponent,
     InfrastructureComponent,
-PartnersComponent,
+    PartnersComponent,
     FooterComponent
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,7 +24,7 @@ PartnersComponent,
     <app-hero />
 
     @defer (on viewport) {
-      <app-stats-bar />
+      <!-- <app-stats-bar /> -->
     } @placeholder {
       <div style="min-height: 120px;"></div>
     }
@@ -60,4 +60,4 @@ PartnersComponent,
     }
   `
 })
-export class LandingComponent {}
+export class LandingComponent { }

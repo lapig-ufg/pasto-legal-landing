@@ -1,0 +1,121 @@
+<article class="about-page pt-28 sm:pt-32 pb-16 px-5 sm:px-8 lg:px-12">
+  <div class="max-w-[900px] mx-auto">
+
+    <a routerLink="/"
+      class="inline-flex items-center gap-1.5 text-verde-bio text-[0.8rem] font-medium no-underline mb-6 hover:underline">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path d="M19 12H5" />
+        <path d="M12 19l-7-7 7-7" />
+      </svg>
+      {{ i18n.t().legal.backHome }}
+    </a>
+
+    <!-- Hero -->
+    <header class="mb-14 sm:mb-20">
+      <h1 class="text-[clamp(1.8rem,4vw,2.8rem)] font-black leading-tight mb-4">{{ i18n.t().about.title }}</h1>
+      <p class="text-text-sub text-[0.95rem] leading-relaxed max-w-[680px]">{{ i18n.t().about.subtitle }}</p>
+    </header>
+
+    <!-- Mission -->
+    <section class="about-section">
+      <div class="section-tag"><span class="tag-line"></span>{{ i18n.t().about.mission.tag }}</div>
+      <h2 class="about-h2">{{ i18n.t().about.mission.title }}</h2>
+      <p class="about-p">{{ i18n.t().about.mission.p1 }}</p>
+      <p class="about-p">{{ i18n.t().about.mission.p2 }}</p>
+    </section>
+
+    <!-- How it works -->
+    <section class="about-section">
+      <div class="section-tag"><span class="tag-line"></span>{{ i18n.t().about.howItWorks.tag }}</div>
+      <h2 class="about-h2">{{ i18n.t().about.howItWorks.title }}</h2>
+      <div class="carousel-wrapper">
+        <button class="carousel-nav prev" (click)="scrollPrev()" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <div class="flow-grid" #carousel (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()"
+          (touchstart)="stopAutoScroll()" (touchend)="startAutoScroll()">
+          @for (step of i18n.t().about.howItWorks.steps; track step.number) {
+          <div class="flow-card">
+            <div class="flow-number">{{ step.number }}</div>
+            <h3 class="flow-title">{{ step.title }}</h3>
+            <p class="flow-desc">{{ step.desc }}</p>
+          </div>
+          }
+        </div>
+        <button class="carousel-nav next" (click)="scrollNext()" aria-label="Próximo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="about-section">
+      <div class="section-tag"><span class="tag-line"></span>{{ i18n.t().about.team.tag }}</div>
+      <h2 class="about-h2">{{ i18n.t().about.team.title }}</h2>
+      <p class="about-p">{{ i18n.t().about.team.p1 }}</p>
+      <p class="about-p">{{ i18n.t().about.team.p2 }}</p>
+      <div class="team-list">
+        @for (group of i18n.t().about.team.groups; track group.title) {
+        <div class="team-group">
+          <h3 class="team-group-title">{{ group.title }}</h3>
+          <div class="team-group-line"></div>
+          <div class="team-members">
+            @for (member of group.members; track member) {
+            <div class="team-member">{{ member }}</div>
+            }
+          </div>
+        </div>
+        }
+      </div>
+    </section>
+
+    <!-- Tech -->
+    <section class="about-section">
+      <div class="section-tag"><span class="tag-line"></span>{{ i18n.t().about.tech.tag }}</div>
+      <h2 class="about-h2">{{ i18n.t().about.tech.title }}</h2>
+      <p class="about-p">{{ i18n.t().about.tech.desc }}</p>
+      <div class="tech-grid">
+        @for (tech of stack; track tech.name) {
+        <div class="tech-chip">
+          <span class="tech-name">{{ tech.name }}</span>
+          <span class="tech-desc">{{ tech.desc }}</span>
+        </div>
+        }
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="about-section">
+      <div class="section-tag"><span class="tag-line"></span>{{ i18n.t().about.contact.tag }}</div>
+      <h2 class="about-h2">{{ i18n.t().about.contact.title }}</h2>
+      <p class="about-p">
+        {{ i18n.t().about.contact.desc }}
+        <a href="mailto:lapig.ufg&#64;gmail.com"
+          class="text-verde-bio no-underline hover:underline">lapig.ufg&#64;gmail.com</a>.
+      </p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-label">{{ i18n.t().about.contact.addressLabel }}</div>
+          <div class="contact-value" style="white-space: pre-line">{{ i18n.t().about.contact.address }}</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-label">{{ i18n.t().about.contact.linksLabel }}</div>
+          <div class="contact-value">
+            <a routerLink="/publicacoes" class="contact-link">{{ i18n.t().nav.publications }}</a>
+            <a routerLink="/termos-de-uso" class="contact-link">{{ i18n.t().legal.termsLink }}</a>
+            <a routerLink="/politica-de-privacidade" class="contact-link">{{ i18n.t().legal.privacyLink }}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</article>
+<app-footer />
