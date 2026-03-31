@@ -1,0 +1,76 @@
+name: Build and Deploy PastoLegal Landing Page on Development Environment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      APPLICATION_NAME: ${{ steps.creat_env.outputs.APPLICATION_NAME }}
+      DOCKER_PATH: ${{ steps.creat_env.outputs.DOCKER_PATH }}
+      LAST_COMMIT_HASH: ${{ steps.creat_env.outputs.LAST_COMMIT_HASH }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Define environment variables
+        id: creat_env
+        run: |
+          set_var() {
+            echo "$1=$2" >> $GITHUB_ENV
+            echo "$1=$2" >> $GITHUB_OUTPUT
+          }
+
+          set_var "DOCKER_PATH" "develop"
+          set_var "APPLICATION_NAME" "${{ github.event.repository.name }}"
+          set_var "LAST_COMMIT_HASH" "$(git log --pretty=format:%h -n 1)"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '25.8.2'
+
+      - name: Build Server and Client
+        run: |
+          npm set progress=false
+          npm ci && npm install -g @angular/cli@21.2.1
+          ng build --stats-json --source-map=false --no-progress
+
+      - name: Build Docker image
+        run: |
+          docker build \
+            --build-arg GIT_COMMIT=${LAST_COMMIT_HASH} \
+            --build-arg BUILD_DATE=$(date -u +%Y-%m-%dT%H:%M:%SZ) \
+            -t lapig/$APPLICATION_NAME:${DOCKER_PATH}_${LAST_COMMIT_HASH} \
+            -t lapig/$APPLICATION_NAME:${DOCKER_PATH}_latest \
+            -f docker/Dockerfile . --no-cache
+
+      - name: Login to Docker Registry
+        run: echo "${{ secrets.DOCKERHUB_PASS }}" | docker login -u "lapig" --password-stdin
+
+      - name: Push Image to Registry
+        run: |
+          docker push lapig/$APPLICATION_NAME:${DOCKER_PATH}_${LAST_COMMIT_HASH}
+          docker push lapig/$APPLICATION_NAME:${DOCKER_PATH}_latest
+
+  deploy:
+    needs: build
+    runs-on: vm3-github-runner
+
+    steps:
+      - name: Restart Application
+        run: |
+          caretaker ${{ needs.build.outputs.APPLICATION_NAME }} ${{ needs.build.outputs.DOCKER_PATH }} \
+            --title="PastoLegal Landing Page"   \
+           --commit=${{ needs.build.outputs.LAST_COMMIT_HASH }} \
+           --repo=${{ github.repository }}                                              
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment completed successfully"
+          echo "Application: ${{ needs.build.outputs.APPLICATION_NAME }}"
+          echo "Version: ${{ needs.build.outputs.DOCKER_PATH }}_${{ needs.build.outputs.LAST_COMMIT_HASH }}"
