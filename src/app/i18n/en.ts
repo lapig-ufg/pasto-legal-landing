@@ -127,7 +127,9 @@ export const en: Translations = {
   },
 
   partners: {
-    tag: 'Partners & Supporters'
+    tag: 'Partners & Supporters',
+    realizacao: 'Partners',
+    apoio: 'Supporters'
   },
 
   footer: {
