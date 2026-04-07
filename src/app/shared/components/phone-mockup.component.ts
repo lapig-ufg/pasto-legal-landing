@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, input, inject } from '@angular/core';
+import { I18nService } from '../../i18n/i18n.service';
 
 @Component({
   selector: 'app-phone-mockup',
@@ -20,15 +21,15 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
               </div>
               <div class="whatsapp-chat">
                 <div class="msg sent" style="animation-delay: 0.4s">
-                  <span class="whitespace-pre-wrap">&#x1F4CD; Localização enviada: Fazenda São Jorge, GO</span>
+                  <span class="whitespace-pre-wrap">&#x1F4CD; {{ i18n.t().features.phoneMockup.chat.msg1 }}</span>
                   <div class="msg-time">10:32</div>
                 </div>
                 <div class="msg received" style="animation-delay: 1.0s">
-                  <span class="whitespace-pre-wrap">&#x2705; Localização recebida! Analisando dados Sentinel-2 da sua área...</span>
+                  <span class="whitespace-pre-wrap">&#x2705; {{ i18n.t().features.phoneMockup.chat.msg2 }}</span>
                   <div class="msg-time">10:32</div>
                 </div>
                 <div class="msg received" style="animation-delay: 1.6s">
-                  <span class="whitespace-pre-wrap">&#x1F4CA; Relatório de Biomassa — Últimos 30 dias:</span>
+                  <span class="whitespace-pre-wrap">&#x1F4CA; {{ i18n.t().features.phoneMockup.chat.msg3 }}</span>
                   <div class="biomass-chart">
                     <div class="chart-bar" style="left:8%;height:35%"></div>
                     <div class="chart-bar" style="left:22%;height:50%"></div>
@@ -40,11 +41,11 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
                   <div class="msg-time">10:33</div>
                 </div>
                 <div class="msg received" style="animation-delay: 2.2s">
-                  <span class="whitespace-pre-wrap">&#x1F7E2; Biomassa em alta: +22% no último mês. Seu pasto está saudável!</span>
+                  <span class="whitespace-pre-wrap">&#x1F7E2; {{ i18n.t().features.phoneMockup.chat.msg4 }}</span>
                   <div class="msg-time">10:33</div>
                 </div>
                 <div class="msg sent" style="animation-delay: 2.8s">
-                  <span class="whitespace-pre-wrap">&#x1F3A4; E a degradação na área norte?</span>
+                  <span class="whitespace-pre-wrap">&#x1F3A4; {{ i18n.t().features.phoneMockup.chat.msg5 }}</span>
                   <div class="msg-time">10:34</div>
                 </div>
               </div>
@@ -57,7 +58,7 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
                     <circle cx="12" cy="10" r="3"/>
                   </svg>
                 </div>
-                <div class="loc-bubble">&#x1F4CD; Fazenda São Jorge</div>
+                <div class="loc-bubble">&#x1F4CD; {{ i18n.t().features.phoneMockup.location.bubble }}</div>
               </div>
             }
             @case ('scanner') {
@@ -65,7 +66,7 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
                 <div class="scanner-frame">
                   <div class="scanner-line"></div>
                 </div>
-                <div class="scanner-label">ANALISANDO COBERTURA...</div>
+                <div class="scanner-label">{{ i18n.t().features.phoneMockup.scanner.label }}</div>
               </div>
             }
             @case ('voice') {
@@ -75,8 +76,8 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
                     <div class="voice-bar" [style.animation-delay]="i * 0.08 + 's'"></div>
                   }
                 </div>
-                <div class="voice-label">PROCESSANDO ÁUDIO</div>
-                <div class="voice-text">Biomassa: +22% ✓</div>
+                <div class="voice-label">{{ i18n.t().features.phoneMockup.voice.label }}</div>
+                <div class="voice-text">{{ i18n.t().features.phoneMockup.voice.text }}</div>
               </div>
             }
           }
@@ -319,6 +320,7 @@ import { Component, ChangeDetectionStrategy, input } from '@angular/core';
   `]
 })
 export class PhoneMockupComponent {
+  readonly i18n = inject(I18nService);
   screen = input<'chat' | 'location' | 'scanner' | 'voice'>('chat');
   size = input<'large' | 'small'>('large');
 
