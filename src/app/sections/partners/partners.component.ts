@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import { CommonModule, NgTemplateOutlet } from '@angular/common';
 import { RevealOnScrollDirective } from '../../shared/directives/reveal-on-scroll.directive';
 import { I18nService } from '../../i18n/i18n.service';
 
@@ -13,21 +14,40 @@ interface Partner {
 @Component({
   selector: 'app-partners',
   standalone: true,
-  imports: [RevealOnScrollDirective],
+  imports: [RevealOnScrollDirective, NgTemplateOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section class="py-12 sm:py-16 px-5 sm:px-8 lg:px-12">
-      <div appRevealOnScroll class="max-w-[900px] mx-auto text-center">
-        <div class="inline-flex items-center gap-1.5 font-mono text-[0.65rem] text-text-muted uppercase tracking-[2px] mb-8">
-          <span class="w-5 h-px bg-verde-bio"></span>
-          {{ i18n.t().partners.tag }}
-          <span class="w-5 h-px bg-verde-bio"></span>
+      <div appRevealOnScroll class="max-w-[900px] mx-auto text-center flex flex-col items-center w-full">
+        <!-- Realização -->
+        <div class="flex items-center justify-center gap-3 font-mono text-[0.65rem] text-text-muted uppercase tracking-[2px] mb-8 mt-4">
+          <span class="w-6 sm:w-10 h-px bg-verde-bio"></span>
+          <span>{{ i18n.t().partners.realizacao }}</span>
+          <span class="w-6 sm:w-10 h-px bg-verde-bio"></span>
         </div>
 
-        <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
-          @for (partner of partners; track partner.name) {
-            <a
-              [href]="partner.url"
+        <div class="w-full grid grid-cols-1 sm:grid-cols-3 items-center justify-items-center gap-8 sm:gap-6 lg:gap-8 max-w-3xl mx-auto">
+          @for (partner of realizacao; track partner.name) {
+            <ng-container *ngTemplateOutlet="partnerCard; context: { $implicit: partner }"></ng-container>
+          }
+        </div>
+
+        <!-- Apoio -->
+        <div class="flex items-center justify-center gap-3 font-mono text-[0.65rem] text-text-muted uppercase tracking-[2px] mb-8 mt-16">
+          <span class="w-6 sm:w-10 h-px bg-verde-bio"></span>
+          <span>{{ i18n.t().partners.apoio }}</span>
+          <span class="w-6 sm:w-10 h-px bg-verde-bio"></span>
+        </div>
+
+        <div class="w-full flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:gap-16">
+          @for (partner of apoio; track partner.name) {
+            <ng-container *ngTemplateOutlet="partnerCard; context: { $implicit: partner }"></ng-container>
+          }
+        </div>
+
+        <ng-template #partnerCard let-partner>
+          <a
+            [href]="partner.url"
               target="_blank"
               rel="noopener noreferrer"
               class="partner-logo"
@@ -62,10 +82,9 @@ interface Partner {
                     loading="lazy" />
                 }
               }
-            </a>
-          }
+          </a>
+        </ng-template>
         </div>
-      </div>
     </section>
   `,
   styles: [`
@@ -118,10 +137,12 @@ interface Partner {
 })
 export class PartnersComponent {
   readonly i18n = inject(I18nService);
-  partners: Partner[] = [
-    { name: 'Solved', url: 'https://solved.eco.br', logo: 'partners/solved.png', height: 36 },
-    { name: 'iCS', url: 'https://www.climaesociedade.org', logo: 'partners/ics.png', height: 40 },
+  realizacao: Partner[] = [
+    { name: 'UFG', url: 'https://www.ufg.br', height: 38, inline: true },
     { name: 'LAPIG', url: 'https://lapig.iesa.ufg.br', height: 40, inline: true },
-    { name: 'UFG', url: 'https://www.ufg.br', height: 38, inline: true }
+    { name: 'Solved', url: 'https://solved.eco.br', logo: 'partners/solved.png', height: 36 }
+  ];
+  apoio: Partner[] = [
+    { name: 'iCS', url: 'https://www.climaesociedade.org', logo: 'partners/ics.png', height: 40 }
   ];
 }

@@ -10,7 +10,7 @@ export const en: Translations = {
     infrastructure: 'Infrastructure',
     publications: 'Publications',
     about: 'About',
-    cta: 'Launch App'
+    cta: 'Try App'
   },
 
   hero: {
@@ -127,7 +127,9 @@ export const en: Translations = {
   },
 
   partners: {
-    tag: 'Partners & Supporters'
+    tag: 'Partners & Supporters',
+    realizacao: 'Partners',
+    apoio: 'Supporters'
   },
 
   footer: {
