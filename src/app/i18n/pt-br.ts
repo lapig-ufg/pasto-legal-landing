@@ -9,7 +9,7 @@ export const ptBr = {
     infrastructure: 'Infraestrutura',
     publications: 'Publicações',
     about: 'Sobre',
-    cta: 'Acessar App'
+    cta: 'Testar App'
   },
 
   // ═══ Hero ═══

@@ -10,7 +10,7 @@ export const en: Translations = {
     infrastructure: 'Infrastructure',
     publications: 'Publications',
     about: 'About',
-    cta: 'Launch App'
+    cta: 'Try App'
   },
 
   hero: {
