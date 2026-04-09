@@ -438,3 +438,22 @@ html[data-theme="light"] .phone-frame {
     0 0 0 1px rgba(0, 0, 0, 0.08),
     inset 0 0 0 1px rgba(0, 0, 0, 0.05);
 }
+
+/* ═══════ PHONE MOCKUP — LIGHT MODE ═══════ */
+html[data-theme="light"] .phone-screen {
+  background: #efeae2;
+}
+html[data-theme="light"] .whatsapp-chat {
+  background: #efeae2;
+}
+html[data-theme="light"] .msg.sent {
+  background: #d9fdd3;
+  color: #111b21;
+}
+html[data-theme="light"] .msg.received {
+  background: #ffffff;
+  color: #111b21;
+}
+html[data-theme="light"] .msg-time {
+  color: rgba(0, 0, 0, 0.4);
+}
