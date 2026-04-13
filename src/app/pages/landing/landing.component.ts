@@ -29,23 +29,29 @@ import { FooterComponent } from '../../sections/footer/footer.component';
       <div style="min-height: 120px;"></div>
     }
 
-    @defer (on viewport) {
-      <app-value />
-    } @placeholder {
-      <div style="min-height: 400px;"></div>
-    }
+    <div id="valores">
+      @defer (on viewport) {
+        <app-value />
+      } @placeholder {
+        <div style="min-height: 400px;"></div>
+      }
+    </div>
 
-    @defer (on viewport) {
-      <app-features />
-    } @placeholder {
-      <div style="min-height: 400px;"></div>
-    }
+    <div id="funcionalidades">
+      @defer (on viewport) {
+        <app-features />
+      } @placeholder {
+        <div style="min-height: 400px;"></div>
+      }
+    </div>
 
-    @defer (on viewport) {
-      <app-infrastructure />
-    } @placeholder {
-      <div style="min-height: 400px;"></div>
-    }
+    <div id="infraestrutura">
+      @defer (on viewport) {
+        <app-infrastructure />
+      } @placeholder {
+        <div style="min-height: 400px;"></div>
+      }
+    </div>
 
 @defer (on viewport) {
       <app-partners />
