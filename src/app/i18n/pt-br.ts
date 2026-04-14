@@ -9,7 +9,7 @@ export const ptBr = {
     infrastructure: 'Infraestrutura',
     publications: 'Publicações',
     about: 'Sobre',
-    cta: 'Acessar App'
+    cta: 'Testar App'
   },
 
   // ═══ Hero ═══
@@ -40,7 +40,7 @@ export const ptBr = {
     cards: [
       {
         title: 'Dados de Satélite',
-        desc: 'Múltiplas Bases de Dados Integramos dados do Mapbiomas, Global Pasture Watch e Global Methane Hub, entre outros para monitorar a saúde do pasto.',
+        desc: 'Múltiplas Bases de Dados Integramos dados do Mapbiomas, Global Pasture Watch e Global Methane Hub, entre outros, para monitorar a saúde do pasto.',
         reveal: '→ NDVI, EVI e índices de biomassa processados automaticamente.'
       },
       {
@@ -116,11 +116,11 @@ export const ptBr = {
       textMap: 'Voz'
     },
     agents: [
-      { name: 'SICAR', desc: 'Cadastro Ambiental Rural — Consulta no SICAR via localização' },
-      { name: 'IBGE', desc: 'Inteligência territorial e climática — Uso e cobertura, precipitação, etc.' },
-      { name: 'LAPIG / Embrapa', desc: 'Suporte para recuperação de pasto degradado' },
-      { name: 'LAPIG / Embrapa', desc: 'Suporte para manejo de pasto' },
-      { name: 'Agno', desc: 'Alertas climáticos e de manejo de pasto em tempo real' }
+      { name: 'SICAR', desc: 'Cadastro Ambiental Rural — Limites da propriedade' },
+      { name: 'Mapbiomas', desc: 'Mapa de pastagens' },
+      { name: 'Monitoramento Global de pastagens / Centro Global do Metano', desc: 'Biomassa e vigor' },
+      { name: 'Embrapa', desc: 'Práticas de Manejo' },
+      { name: 'INPE / CEMPA-Cerrado', desc: 'Dados agrometeorológicos, alertas climáticos' }
     ],
     motors: [
       { name: 'Gemini 2.5 Flash', desc: 'Motor de processamento IA' },
@@ -132,7 +132,9 @@ export const ptBr = {
 
   // ═══ Partners Section ═══
   partners: {
-    tag: 'Realização e Apoio'
+    tag: 'Realização e Apoio',
+    realizacao: 'Realização',
+    apoio: 'Apoio'
   },
 
   // ═══ Footer ═══
