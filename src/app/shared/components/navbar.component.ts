@@ -23,7 +23,7 @@ import { I18nService } from '../../i18n/i18n.service';
           <li><a routerLink="/publicacoes" class="nav-link" (click)="closeMenu()">{{ i18n.t().nav.publications }}</a></li>
           <li><a routerLink="/sobre" class="nav-link" (click)="closeMenu()">{{ i18n.t().nav.about }}</a></li>
           <li>
-            <a routerLink="/" fragment="funcionalidades" class="nav-cta bg-[var(--color-cta-bg)] text-[var(--color-cta-text)]! px-6 py-2.5 rounded-full font-bold text-[0.8rem] shadow-[0_0_20px_var(--color-cta-glow)] hover:bg-white hover:-translate-y-0.5 transition-all duration-300" (click)="closeMenu()">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSepSZGScWS5PsN0fkqEu6-qigmNq194eTgSIFB0ey5VNg3oUg/viewform" target="_blank" rel="noopener noreferrer" class="nav-cta bg-[var(--color-cta-bg)] text-[var(--color-cta-text)]! px-6 py-2.5 rounded-full font-bold text-[0.8rem] shadow-[0_0_20px_var(--color-cta-glow)] hover:bg-white hover:-translate-y-0.5 transition-all duration-300" (click)="closeMenu()">
               {{ i18n.t().nav.cta }}
             </a>
           </li>
