@@ -269,99 +269,94 @@ export class PublicationsComponent implements OnInit {
 
   publications: Publication[] = [
     {
-      title: 'Pasturelands degradation assessment using long-term Landsat and Sentinel-2 data in the Brazilian Cerrado',
-      authors: 'Parente, L.; Ferreira, L.G.; Faria, A.; Nogueira, S.; Araújo, F.M.; Teixeira, L.; Hagen, S.',
-      venue: 'Remote Sensing of Environment',
-      year: 2024,
+      title: 'Discriminating pasture degradation in Brazil: insights from EnMAP-Based spectral resolution simulations with emphasis on Landsat Next',
+      authors: 'Pires Silva, Galvão, Ferreira Júnior et al.',
+      venue: 'Remote Sensing Letters',
+      year: 2026,
       type: 'article',
-      doi: '10.1016/j.rse.2024.114015',
-      highlight: true,
-      abstract: 'Este estudo apresenta uma abordagem multitemporal para avaliação da degradação de pastagens no Cerrado brasileiro, integrando séries temporais Landsat e Sentinel-2 para classificação do vigor vegetativo e identificação de padrões de degradação em larga escala.'
+      doi: '10.1080/2150704X.2025.2611930',
+      highlight: true
     },
     {
-      title: 'Atlas das Pastagens Brasileiras: mapeamento e evolução temporal',
-      authors: 'Parente, L.; Ferreira, L.G.; Faria, A.; Nogueira, S.; Araújo, F.M.',
-      venue: 'Nature Scientific Data',
-      year: 2024,
+      title: 'Pasture Degradation Estimates Through Field Data in the State of Goiás, Brazil',
+      authors: 'Teles, Mesquita, Baumann et al.',
+      venue: 'Land Degradation & Development',
+      year: 2025,
       type: 'article',
-      doi: '10.1038/s41597-024-03182-7',
-      highlight: true,
-      abstract: 'Apresentação do Atlas das Pastagens, o mais abrangente levantamento de pastagens do Brasil, cobrindo o período de 1985 a 2023 com dados Landsat e classificação por aprendizado de máquina.'
+      doi: '10.1002/ldr.70089',
+      highlight: true
     },
     {
-      title: 'Monitoring pasture biomass using Sentinel-2 spectral indices and machine learning regression',
-      authors: 'Teixeira, L.; Parente, L.; Ferreira, L.G.; Nogueira, S.',
-      venue: 'International Journal of Applied Earth Observation and Geoinformation',
-      year: 2023,
+      title: 'Light Use Efficiency (LUE) based bimonthly Gross Primary Productivity (GPP) for global grasslands at 30 m spatial resolution (2000-2022)',
+      authors: 'Isik, Parente, Consoli et al.',
+      venue: 'Research Square (Preprint)',
+      year: 2025,
       type: 'article',
-      doi: '10.1016/j.jag.2023.103567',
-      abstract: 'Desenvolvimento de modelos de regressão baseados em índices espectrais do Sentinel-2 (NDVI, EVI, SAVI) para estimativa de biomassa em pastagens tropicais, com validação de campo em propriedades rurais de Goiás.'
+      doi: '10.21203/rs.3.rs-5587863/v2',
+      abstract: 'The paper describes production of a high spatial resolution (30 m) bimonthly Light Use Efficiency (LUE) based Gross Primary Productivity (GPP) data set for global grasslands between 2000-2022.'
     },
     {
-      title: 'Deep learning for pasture degradation classification from Sentinel-2 time series in tropical regions',
-      authors: 'Nogueira, S.; Parente, L.; Ferreira, L.G.; Teixeira, L.',
-      venue: 'ISPRS Journal of Photogrammetry and Remote Sensing',
-      year: 2023,
-      type: 'article',
-      doi: '10.1016/j.isprsjprs.2023.09.012',
-    },
-    {
-      title: 'Assessing pasture quality in Brazil using MODIS NDVI time series and phenological metrics',
-      authors: 'Araújo, F.M.; Ferreira, L.G.; Parente, L.',
+      title: 'Discrimination of Degraded Pastures in the Brazilian Cerrado Using the PlanetScope SuperDove Satellite Constellation',
+      authors: 'Silva, Galvão, Ferreira Júnior et al.',
       venue: 'Remote Sensing',
-      year: 2022,
-      type: 'article',
-      doi: '10.3390/rs14030556',
-    },
-    {
-      title: 'An analysis of the Cerrado deforestation and pasture expansion trends from 2000 to 2020',
-      authors: 'Faria, A.; Parente, L.; Ferreira, L.G.; Araújo, F.M.',
-      venue: 'Land Use Policy',
-      year: 2022,
-      type: 'article',
-      doi: '10.1016/j.landusepol.2022.106358',
-      abstract: 'Análise integrada das tendências de desmatamento e expansão de pastagens no Cerrado nas últimas duas décadas, correlacionando mudanças de uso do solo com políticas públicas e dinâmicas de mercado.'
-    },
-    {
-      title: 'Geospatial artificial intelligence for sustainable livestock: a WhatsApp-based framework',
-      authors: 'Parente, L.; Teixeira, L.; Nogueira, S.; Ferreira, L.G.',
-      venue: 'Proceedings of the FOSS4G 2023 Conference',
-      year: 2023,
-      type: 'conference',
-      url: 'https://foss4g.org/2023',
-      abstract: 'Apresentação do framework Pasto Legal como caso de uso de inteligência artificial geoespacial acessível via WhatsApp para apoio à pecuária sustentável.'
-    },
-    {
-      title: 'Mapeamento e monitoramento de pastagens por sensoriamento remoto e aprendizado de máquina',
-      authors: 'Parente, L.',
-      venue: 'Tese de Doutorado — Universidade Federal de Goiás, IESA/LAPIG',
-      year: 2022,
-      type: 'thesis',
-      url: 'https://repositorio.bc.ufg.br/',
-      highlight: true,
-    },
-    {
-      title: 'Inteligência artificial aplicada ao monitoramento ambiental: do satélite ao produtor rural',
-      authors: 'Teixeira, L.',
-      venue: 'Dissertação de Mestrado — Universidade Federal de Goiás, IESA/LAPIG',
       year: 2024,
-      type: 'thesis',
+      type: 'article',
+      doi: '10.3390/rs16132256',
+      abstract: 'Pasture degradation poses significant economic, social, and environmental impacts in the Brazilian savanna ecosystem. Despite these impacts, effective monitoring methodologies using medium-to-high spatial resolution satellite time-series data are still developing.'
     },
     {
-      title: 'Pastagens Brasileiras: Técnicas de Sensoriamento Remoto para Mapeamento e Monitoramento',
-      authors: 'Ferreira, L.G.; Parente, L.; Araújo, F.M.',
-      venue: 'In: Sensoriamento Remoto no Brasil: Avanços e Perspectivas. Editora UFG',
-      year: 2021,
-      type: 'chapter',
+      title: 'Monitoring of Carbon Stocks in Pastures in the Savannas of Brazil through Ecosystem Modeling on a Regional Scale',
+      authors: 'Santos, Pinto, Silva et al.',
+      venue: 'Land',
+      year: 2022,
+      type: 'article',
+      doi: '10.3390/land12010060',
+      abstract: 'In 2020, Brazil was the seventh largest emitter of GHG (greenhouse gases), releasing ~2.16 GtCO2e (gigatons of carbon dioxide equivalent) into the atmosphere. Among the main sectors responsible for these numbers are changes in land use and agriculture.'
     },
     {
-      title: 'Remote sensing of pastureland degradation in the Neotropics: a review of advances and challenges',
-      authors: 'Ferreira, L.G.; Parente, L.; Faria, A.; Nogueira, S.',
-      venue: 'In: Earth Observation for Land and Emergency Monitoring. Wiley',
-      year: 2021,
-      type: 'chapter',
-      doi: '10.1002/9781119082354.ch12',
+      title: 'Reconstructing Three Decades of Land Use and Land Cover Changes in Brazilian Biomes with Landsat Archive and Earth Engine',
+      authors: 'Souza, Z. Shimbo, Rosa et al.',
+      venue: 'Remote Sensing',
+      year: 2020,
+      type: 'article',
+      doi: '10.3390/rs12172735',
+      highlight: true,
+      abstract: 'Brazil has a monitoring system to track annual forest conversion in the Amazon and most recently to monitor the Cerrado biome. However, there is still a gap in annual land use and land cover (LULC) mapping to track other types of changes.'
     },
+    {
+      title: 'Next Generation Mapping: Combining Deep Learning, Cloud Computing, and Big Remote Sensing Data',
+      authors: 'Parente, Taquary, Silva et al.',
+      venue: 'Remote Sensing',
+      year: 2019,
+      type: 'article',
+      doi: '10.3390/rs11232881',
+      abstract: 'The growing availability of big Earth observation data paired with cloud-computing and Machine Learning (ML) allowed for significant improvements in environmental mapping and monitoring.'
+    },
+    {
+      title: 'Assessing the Spatial and Occupation Dynamics of the Brazilian Pasturelands Based on the Automated Classification of MODIS Images from 2000 to 2016',
+      authors: 'Parente, Ferreira',
+      venue: 'Remote Sensing',
+      year: 2018,
+      type: 'article',
+      doi: '10.3390/rs10040606',
+      abstract: 'The pasturelands areas of Brazil constitute an important asset for the country, as the main food source for the world’s largest commercial herd, representing roughly 20% of the national territory.'
+    },
+    {
+      title: 'Impacts of agricultural expansion on the Brazilian Cerrado environment',
+      authors: 'LAPIG Team',
+      venue: 'Journal of Environmental Management / ScienceDirect',
+      year: 2024,
+      type: 'article',
+      url: 'https://www.sciencedirect.com/science/article/abs/pii/S0301479724004596'
+    },
+    {
+      title: 'Remote sensing approaches for pasturelands mapping and assessment',
+      authors: 'LAPIG Team',
+      venue: 'Remote Sensing of Environment / ScienceDirect',
+      year: 2019,
+      type: 'article',
+      url: 'https://www.sciencedirect.com/science/article/abs/pii/S0034425719303207'
+    }
   ];
 
   years: number[] = [];
