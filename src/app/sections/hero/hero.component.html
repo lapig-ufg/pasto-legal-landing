@@ -2,7 +2,7 @@
 <section class="min-h-screen flex items-center relative overflow-hidden pt-24 pb-12 px-5 sm:px-8 lg:px-12">
   <div class="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
     <!-- Text -->
-    <div class="z-[2] text-center lg:text-left">
+    <div class="relative z-[2] text-center lg:text-left">
       <div class="hero-badge inline-flex items-center gap-2 bg-glass-bg border border-glass-border backdrop-blur-[10px] px-4 py-1.5 sm:px-5 sm:py-2 rounded-full text-[0.65rem] sm:text-[0.75rem] font-medium text-verde-bio tracking-widest uppercase mb-5 sm:mb-6 opacity-0 animate-[fade-up_0.8s_ease_0.5s_forwards]">
         <span class="w-1.5 h-1.5 rounded-full bg-verde-bio animate-[pulse-dot_2s_ease_infinite]"></span>
         {{ i18n.t().hero.badge }}
@@ -23,7 +23,7 @@
           <svg class="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           {{ i18n.t().hero.cta }}
         </a>
-        <a href="#funcionalidades" class="inline-flex items-center gap-2 px-6 py-3 sm:px-7 sm:py-4 bg-transparent text-branco-nuvem border border-glass-border rounded-full font-heading font-medium text-[0.85rem] sm:text-[0.95rem] cursor-pointer no-underline backdrop-blur-[10px] transition-all duration-300 hover:border-verde-bio hover:text-verde-bio hover:-translate-y-0.5 w-full sm:w-auto justify-center">
+        <a routerLink="/" fragment="funcionalidades" class="inline-flex items-center gap-2 px-6 py-3 sm:px-7 sm:py-4 bg-transparent text-branco-nuvem border border-glass-border rounded-full font-heading font-medium text-[0.85rem] sm:text-[0.95rem] cursor-pointer no-underline backdrop-blur-[10px] transition-all duration-300 hover:border-verde-bio hover:text-verde-bio hover:-translate-y-0.5 w-full sm:w-auto justify-center">
           {{ i18n.t().hero.ctaSecondary }}
         </a>
       </div>
